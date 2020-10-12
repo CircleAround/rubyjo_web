@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta http-equiv="Last-Modified" content="Wed, 30 Aug 2017 08:02:52 GMT">
+	<meta charset="UTF-8">
+	<!--<meta name="viewport" content="width=device-width">-->
+
+	<meta property="og:title" content=" &raquo; ruby" />
+
+		<meta property="og:type" content="article" />
+	
+	<meta property="og:description" content="Webプログラミング超初心者の女子大生2人によるブログです。htmlやCSSなどの基礎から始め、Sinatraを用いてRubyを勉強しました。3週間でどこまでできるようになったのか！？WEBプログラミング個別トレーニングを行っているサークルアラウンド株式会社さんの研修を受けました。" />
+	<meta property="og:image" content="https://rubyjo.circlearound.co.jp/wp-content/themes/rubyjo/image/header.jpg" />
+	<meta property="og:site_name" content="ぽんこつ姉妹のRuby女子会   〜基礎からWebはじめました〜" />
+	<meta property="og:locale" content="ja_JP" />
+	<meta property="fb:app_id" content="436901683160289" />
+
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" href="/favicon.ico" >
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/rubyjo/js/html5.js"></script>
+	<![endif]-->
+	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>ruby &#8211; ぽんこつ姉妹のRuby女子会   〜基礎からWebはじめました〜</title>
+<link rel='dns-prefetch' href="//fonts.googleapis.com" />
+<link rel='dns-prefetch' href="//s.w.org" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/rubyjo.circlearound.co.jp\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.1"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='twentyfifteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href="/wp-content/themes/rubyjo/genericons/genericons.css?ver=3.2" type='text/css' media='all' />
+<link rel='stylesheet' id='twentyfifteen-style-css'  href="/wp-content/themes/rubyjo/style.css?ver=4.8.1" type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfifteen-ie-css'  href="/wp-content/themes/rubyjo/css/ie.css?ver=20141010" type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentyfifteen-ie7-css'  href="/wp-content/themes/rubyjo/css/ie7.css?ver=20141010" type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src="/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+<script type='text/javascript' src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+<link rel='https://api.w.org/' href="/wp-json/" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.8.1 with StaticPress ver.0.4.5" />
+<!-- BEGIN: WP Social Bookmarking Light -->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<style type="text/css">
+.wp_social_bookmarking_light{
+    border: 0 !important;
+    padding: 10px 0 0 0 !important;
+    margin: 0 !important;
+    float: right;
+}
+.wp_social_bookmarking_light div{
+    float: left !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 5px 0px 0 !important;
+    min-height: 30px !important;
+    line-height: 18px !important;
+    text-indent: 0 !important;
+}
+.wp_social_bookmarking_light img{
+    border: 0 !important;
+    padding: 0;
+    margin: 0;
+    vertical-align: top !important;
+}
+.wp_social_bookmarking_light_clear{
+    clear: both !important;
+}
+#fb-root{
+    display: none;
+}
+.wsbl_twitter{
+    width: 100px;
+}
+.wsbl_facebook_like iframe{
+    max-width: none !important;
+}</style>
+<!-- END: WP Social Bookmarking Light -->
+</head>
+
+<body class="archive category category-ruby category-4">
+<div id="container" class="hfeed site">
+	<a href="/"><img class="top" src="/wp-content/themes/rubyjo/image/header.jpg"></a>
+<div class="space"></div>	
+        <div id="main" class="site-content">
+	<section id="primary" class="content-area">
+		<main class="site-main" role="main">
+				
+			<header class="page-header">
+				<h1 class="page-title">カテゴリー: ruby</h1><div class="taxonomy-description"><p>rubyについて！</p>
+</div>			</header><!-- .page-header -->
+
+			
+<article id="post-195" class="post-195 post type-post status-publish format-standard hentry category-ruby">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="/ruby/" rel="bookmark">ついに！Rubyに挑戦！！</a></h1>		<div class="line"></div>
+			<h2>2015/08/24/Mon</h2>
+			<div class="social">
+				<div class='wp_social_bookmarking_light'><div class="wsbl_hatena_button"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-title="" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"> <img src="//b.hatena.ne.jp/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="//b.hatena.ne.jp/js/bookmark_button.js" charset="utf-8" async="async"></script></div><div class="wsbl_facebook_like"><div id="fb-root"></div><fb:like href="" layout="button_count" action="like" width="100" share="false" show_faces="false" ></fb:like></div><div class="wsbl_twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-text="" data-lang="ja">Tweet</a></div></div><br class='wp_social_bookmarking_light_clear' />			</div>
+		<div class="line"></div>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>今日から本題のRubyとSinatraにはいりました！</p>
+<h3>〜インストール〜</h3>
+<p>まずは、Rubyをインストールするために<br />
+「rbenv」をインストールします。<br />
+Rubyはいくつもバージョンがあるらしく、<br />
+rbenvをインストールすることで、<br />
+バージョンを簡単にシフトすることが出来ます。<br />
+そのあと、Rubyをインストールしました！<br />
+参考サイト<br />
+<a href="http://circlearound.co.jp/blog/1089#a3" target="_blank">rbenv&amp;Rubyのインストール</a></p>
+<p>続いてSinatraのインストールです。<br />
+Sinatraのインストールはとても簡単で<br />
+ターミナルに<br />
+「gem install sinatra」<br />
+と<br />
+「gem install sinatra-reloader」<br />
+の２行を打つだけです！<br />
+参考サイト（２.Sinatraのインストールからご覧ください）<br />
+<a href="https://it.typeac.jp/article/show/5" target="_blank">Sinatraのインストール</a></p>
+<h3>〜Ruby？Sinatra？？〜</h3>
+<p>「Rubyは言語で、Sinatraはフレームワークです。」<br />
+そう言われたのですが、<br />
+妹はここの関係性がわかりませんでした。</p>
+<p>姉「Rubyは難しいから、それを簡単に扱うのがSinatraだよ」<br />
+妹「？？？？？？<br />
+<span>　　</span>…この前やったBootstrapとcssの関係みたいな感じ？」<br />
+？「まあそんな感じっちゃそんな感じだね」<br />
+妹「ほーほー」</p>
+<p>んんん……<br />
+このソースコードはどこがRubyでどこがSinatraなんだ？？</p>
+<p>ここから妹は質問攻めをしました。<br />
+結果！<br />
+・SinatraはRubyで書かれている！<br />
+・SinatraはRubyでWebアプリケーションをつくるときに<br />
+<span>　</span>必要なものを集めてあるもの！<br />
+ということがわかりました。<br />
+これを把握できたことが妹の中ではすごく大きく、<br />
+頭の中の「？」が減りました。</p>
+<p>厳密に言うと少し違うのですが、感覚的には<br />
+フレームワークというのは、<br />
+「なにか特定の言語で、何かしらのアプリケーションをつくるときに<br />
+必要であろうものを集めてあるもの」<br />
+という感じです！</p>
+<p>姉が妹のために、身近なもので<br />
+RubyとSinatraの関係性を表現してくれたので、<br />
+こちらをご覧ください！↓↓↓↓<br />
+<a href="/wp-content/uploads/2015/08/vegetables.png"><img src="/wp-content/uploads/2015/08/vegetables-350x1024.png" alt="vegetables" width="350" height="1024" class="alignnone size-large wp-image-213" /></a></p>
+<h3>〜Hello world!〜</h3>
+<p>さてさて、これから<br />
+Rubyをつかって「Hello world!」<br />
+と表示したいと思います。</p>
+<p>姉妹はいつもSublime Text2を使っているので、<br />
+そのエディタを使っていきます。<br />
+まずはエディタでファイルをつくります。<br />
+ファイルの拡張子なのですが、<br />
+厳密には「.rb」にしなくても動きますが、<br />
+「.rb」にすることが推奨されています。</p>
+<p>そのファイルの中に<br />
+<a href="/wp-content/uploads/2015/08/screenshot-2015-08-24-16.31.28.png"><img class="alignnone size-full wp-image-196" src="/wp-content/uploads/2015/08/screenshot-2015-08-24-16.31.28.png" alt=" 2015-08-24 16.31.28" width="235" height="144" /></a><br />
+と打ちましょう。</p>
+<p>打ち終えたら、ターミナルに移動します。<br />
+ここからが少し大変なのですが、<br />
+ファイル名.rbのファイルがある場所に<br />
+「ls」や「cd」コマンドを利用して移動して、<br />
+「ruby ファイル名.rb」というコマンドを実行します。<br />
+こんな感じ！↓<br />
+<a href="/wp-content/uploads/2015/08/screenshot-2015-08-24-17.14.441.png"><img src="/wp-content/uploads/2015/08/screenshot-2015-08-24-17.14.441.png" alt="screenshot-2015-08-24-17.14.44" width="413" height="184" class="alignnone size-full wp-image-220" /></a><br />
+Webサーバーを立ち上げるためです。<br />
+今は一時的にターミナルでWebサーバーを立ち上げているので<br />
+ターミナルを閉じて、またRubyでつくったものを表示させたいときに<br />
+ターミナルでこのコマンドを入力します。</p>
+<p>ターミナルの使い方でわからないことがあったら<br />
+妹もこのサイトをみて頑張ったので<br />
+こちらをご覧ください！<br />
+<a href="http://techacademy.jp/magazine/5155" target="_blank">ターミナル使い方</a></p>
+<p>入力し終えたら、<br />
+ブラウザでhttp://localhost:4567/を開いてみてください！<br />
+そうすると…<br />
+<a href="/wp-content/uploads/2015/08/screenshot-2015-08-24-16.53.39.png"><img class="alignnone size-full wp-image-200" src="/wp-content/uploads/2015/08/screenshot-2015-08-24-16.53.39.png" alt="screenshot 2015-08-24 16.53.39" width="220" height="103" /></a><br />
+このように表示することができました！</p>
+<h3>〜まとめ〜</h3>
+<p>gitのときでもそうでしたが、<br />
+『習うより慣れろ』<br />
+ということなので、<br />
+これからたくさん使って理解を深めたいと思います！</p>
+<p>姉妹「頑張ります！」</p>
+<p>今日のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/6985c1d3addce4d36686407eb64c34fa90943f2c" target="_blank">こちら</a>です。<br />
+参考にしてくださいね！</p>
+	</div><!-- .entry-content -->
+
+	
+	
+</article><!-- #post-## -->
+
+<div class="space"></div>
+
+<article id="post-240" class="post-240 post type-post status-publish format-standard hentry category-ruby">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="/ruby-2/" rel="bookmark">HTMLファイルを出すためには？</a></h1>		<div class="line"></div>
+			<h2>2015/08/25/Tue</h2>
+			<div class="social">
+				<div class='wp_social_bookmarking_light'><div class="wsbl_hatena_button"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-title="" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"> <img src="//b.hatena.ne.jp/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="//b.hatena.ne.jp/js/bookmark_button.js" charset="utf-8" async="async"></script></div><div class="wsbl_facebook_like"><div id="fb-root"></div><fb:like href="" layout="button_count" action="like" width="100" share="false" show_faces="false" ></fb:like></div><div class="wsbl_twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-text="" data-lang="ja">Tweet</a></div></div><br class='wp_social_bookmarking_light_clear' />			</div>
+		<div class="line"></div>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>前回のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/6985c1d3addce4d36686407eb64c34fa90943f2c" target="_blank">こちら</a></p>
+<p>？「じゃあ次は、この前作ったHTMLファイルを<br />
+<span>　　</span>Rubyでだしてみよう！」<br />
+姉妹「…え？どういうこと？」<br />
+妹「リンクってことではないですよね？」<br />
+？「うん、違うね」</p>
+<p>ここから姉妹の戦いが始まりました。<br />
+各自、HPを漁っていきます。<br />
+妹「『ruby htmlファイル 出力』……<br />
+<span>　　</span>いや、でもファイルに入出力するわけではないか」<br />
+姉「『ruby html 埋め込み』……違うかー。<br />
+<span>　　</span>そういえば、SinatraってRubyを簡単にしてくれるんだよな〜、<br />
+<span>　　</span>そしたらSinatraでググればいいのかな」<br />
+？「うんうん」妹「（なるほど）」<br />
+妹「『Sinatra htmlファイル 読み込み』……<br />
+<span>　　</span>え！これめっちゃいけそう！！ぽいぽいぽい！！」<br />
+<a href="/wp-content/uploads/2015/08/screenshot-2015-08-25-17.24.58.png"><img src="/wp-content/uploads/2015/08/screenshot-2015-08-25-17.24.58-300x57.png" alt="screenshot 2015-08-25 17.24.58" width="300" height="57" class="alignnone size-medium wp-image-252" /></a><br />
+妹「え、できない…」<br />
+？「これより簡単な方法あるよー」<br />
+妹「まじかーーー」<br />
+姉「『sinatra html』……このHPに書いてあるっぽい…」<br />
+妹「………（負けず嫌いだからまだ聞かない）」<br />
+？「あー、このHPの通りにやったらできるね」<br />
+妹「…！！？？？（姉に先越されて少し悔しい）」<br />
+姉「あれ？拡張子が.htmlになっちゃう！」<br />
+妹「チラ…、カタカタカタカタ。よっしできたー！！」<br />
+姉「ええええ！！！」</p>
+<p>さあ、姉が発見したHPにはどんなことが書いてあったのでしょうか。</p>
+<h3>〜どうすればいいの？〜</h3>
+<p>Sinatraでは、「.erb」という形式でHTMLを表現できます。<br />
+そして、これらの基本構造は、このようにしましょう。<br />
+├── myapp.rb<br />
+└── views<br />
+<span>　</span>└── index.erb   </p>
+<p>myapp.rbと同じところに「views」というフォルダをつくり<br />
+その中に「.erb」のファイルを作成します。<br />
+「.erb」は、RubyもHTMLも書ける便利な拡張子です。<br />
+index.erbに、呼び出したい内容を書きます。<br />
+myapp.rbには<br />
+<a href="/wp-content/uploads/2015/08/2015-08-28-22.14.27.png"><img src="/wp-content/uploads/2015/08/2015-08-28-22.14.27.png" alt="2015-08-28 22.14.27" width="111" height="48" class="alignnone size-full wp-image-370" /></a><br />
+と書きます。<br />
+<a href="http://kuroneko0208.hatenablog.com/entry/2013/11/26/034323" target="_blank">姉が発見したHP</a></p>
+<h3>〜拡張子の問題〜</h3>
+<p>さて、ここで姉が壁にぶち当たった拡張子のお話です。<br />
+今までのように、Sublime Textで保存する際に<br />
+ファイル名を「index.erb」と入力したのですが<br />
+なぜか保存して開いてみると「index.erb.html」<br />
+となってしまっているのです。</p>
+<p>ここで、神の声待ち！！！</p>
+<p>「ファイルのところで『情報を見る』をクリックして<br />
+そこから名前と拡張子ってとこで直してみな！」</p>
+<p>姉「ほおお……、あ！できた！！」<br />
+<a href="/wp-content/uploads/2015/08/box.png"><img src="/wp-content/uploads/2015/08/box-282x300.png" alt="box" width="282" height="300" class="alignnone size-medium wp-image-264" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/box-282x300.png 282w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/box.png 572w" sizes="(max-width: 282px) 100vw, 282px" /></a><br />
+無事保存することができて動かすことが出来ました！<br />
+さらに、ファイルの拡張子を常に表示させる方法があります。<br />
+そうすることで、ファイル名を変更するときに<br />
+拡張子自体も変更することが可能になり、<br />
+楽に変更することが出来ます。<br />
+そのやり方はこちらをご覧ください。<br />
+参考サイト<br />
+<a href="http://blog.atenasyokunin.com/win2mac/mac_extension/" target="_blank">拡張子を常に表示させる方法</a><br />
+もし拡張子が自分が保存したい拡張子にならない場合は<br />
+この方法を実践してみてください！</p>
+<p>今日のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/b83acb7b481a91c0d2d2964b24a9e4e6837149be" target="_blank">こちら</a>です。<br />
+参考にしてくださいね！</p>
+	</div><!-- .entry-content -->
+
+	
+	
+</article><!-- #post-## -->
+
+<div class="space"></div>
+
+<article id="post-266" class="post-266 post type-post status-publish format-standard hentry category-ruby">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="/ruby-3/" rel="bookmark">別ページに移動してみよう！</a></h1>		<div class="line"></div>
+			<h2>2015/08/26/Wed</h2>
+			<div class="social">
+				<div class='wp_social_bookmarking_light'><div class="wsbl_hatena_button"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-title="" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"> <img src="//b.hatena.ne.jp/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="//b.hatena.ne.jp/js/bookmark_button.js" charset="utf-8" async="async"></script></div><div class="wsbl_facebook_like"><div id="fb-root"></div><fb:like href="" layout="button_count" action="like" width="100" share="false" show_faces="false" ></fb:like></div><div class="wsbl_twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-text="" data-lang="ja">Tweet</a></div></div><br class='wp_social_bookmarking_light_clear' />			</div>
+		<div class="line"></div>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>前回のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/b83acb7b481a91c0d2d2964b24a9e4e6837149be" target="_blank">こちら</a></p>
+<p>？「前回HTMLファイルを呼び出したけど、そのindex.erbから違うページへの行き方を調べてみましょう。さらに今回はそのページを『http://localhost:4567/about』でだせるようにしましょう。」</p>
+<p>姉妹「はーい」<br />
+ということで、また各自調べ始めました。<br />
+そしてほぼ同時に<br />
+姉妹「できたーー！！！」<br />
+はい、できました。</p>
+<p>妹が参考にしたサイト：<a href="http://parrot.hatenadiary.jp/entry/20091211/1260503235" target="_blank">違うページへの行き方</a></p>
+<p>そのやり方なのですが、<br />
+まず最初につくった「.rb」ファイルの中に<br />
+get ‘/about’ do　<br />
+<span>　　</span>erb :about<br />
+end<br />
+というソースコードを書きます。<br />
+このような感じです。↓↓<br />
+<a href="/wp-content/uploads/2015/08/filename.png"><img src="/wp-content/uploads/2015/08/filename.png" alt="filename" width="800" height="573" class="alignnone size-full wp-image-258" /></a><br />
+そしてもしHTMLのファイルをもともと作っていて<br />
+about.htmlをリンクしようとしていたら<br />
+index.erbのソースコードをこのように変更しましょう。<br />
+<a href="/wp-content/uploads/2015/08/box1.png"><img src="/wp-content/uploads/2015/08/box1.png" alt="box1" width="426" height="95" class="alignnone size-full wp-image-269" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/box1.png 426w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/box1-300x67.png 300w" sizes="(max-width: 426px) 100vw, 426px" /></a><br />
+そうすると！ちゃんと動くはずです！</p>
+<p>でもまだページの移動だけしか出来ていなくて<br />
+CSSや画像の読み込みなどはまだです。</p>
+<h3 id ="Browser">〜ブラウザ、サーバって？〜</h3>
+<p>さてさて、index.erbから違うページへの行き方は<br />
+簡単にできた姉妹だったのですが、<br />
+ブラウザとサーバの関係でつまずきました。<br />
+Rubyでのお話ですが、<br />
+まず、ブラウザというのはサーバからきた文字列を<br />
+デザイン化して表示するという感覚です。<br />
+サーバは、ブラウザからの要求をうけて、<br />
+その結果を文字列として返します。<br />
+<a href="/wp-content/uploads/2015/08/server1.png"><img src="/wp-content/uploads/2015/08/server1.png" alt="server" width="989" height="724" class="alignnone size-full wp-image-338" /></a></p>
+<p>姉がわかりやすく図を書いてくれました！<br />
+１.ユーザーがブラウザでアクセスしたいURLをうち、<br />
+<span>　 </span>そのURLが要求としてサーバに送られる。<br />
+<span>　 </span>ここでのURLはhttp://localhost:4567/aboutです。<br />
+２.「localhost:4567」というサーバが<br />
+<span>　 </span>/aboutの情報を取得するように動作し、get関数を見つける。<br />
+<span>　 </span>そこでabout.erbのファイルをブラウザに返すことを認識する。<br />
+３.about.erbのファイルを呼び出して、文字列としてブラウザに返す。<br />
+４.サーバから返ってきた文字列をブラウザがデザイン化して表示する。</p>
+<p>まるでブラウザとサーバはコンビですね。<br />
+漫才みたいですね。<br />
+ブラウザさんがボケで、サーバさんがツッコミの感じ！<br />
+ブラウザさんがボケたら、<br />
+サーバさんはそのボケが書いてあるネタ帳を探して<br />
+必ず突っ込んでくれます。<br />
+サーバさん優しい…！！</p>
+<p>妹自身もあまりよくわかっていない状況なので<br />
+またわかり次第詳しく書きたいと思います。<br />
+ごめんなさい！！</p>
+<h3>〜ちなみに〜</h3>
+<p>最初にターミナルでWebサーバを立ち上げる<br />
+という話をしましたよね。<br />
+そのWebサーバーというのが「localhost」であって<br />
+自分のPCの中にあるのです！</p>
+<p>今日のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/970871f36765b6c9720654c2f6d072a31d5e27b0" target="_blank">こちら</a>です。<br />
+参考にしてくださいね！</p>
+	</div><!-- .entry-content -->
+
+	
+	
+</article><!-- #post-## -->
+
+<div class="space"></div>
+
+<article id="post-306" class="post-306 post type-post status-publish format-standard hentry category-ruby">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="/ruby-4/" rel="bookmark">入力した内容の表示</a></h1>		<div class="line"></div>
+			<h2>2015/08/28/Fri</h2>
+			<div class="social">
+				<div class='wp_social_bookmarking_light'><div class="wsbl_hatena_button"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-title="" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"> <img src="//b.hatena.ne.jp/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="//b.hatena.ne.jp/js/bookmark_button.js" charset="utf-8" async="async"></script></div><div class="wsbl_facebook_like"><div id="fb-root"></div><fb:like href="" layout="button_count" action="like" width="100" share="false" show_faces="false" ></fb:like></div><div class="wsbl_twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-text="" data-lang="ja">Tweet</a></div></div><br class='wp_social_bookmarking_light_clear' />			</div>
+		<div class="line"></div>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>前回のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/970871f36765b6c9720654c2f6d072a31d5e27b0" target="_blank">こちら</a></p>
+<p>今まではリンクを使って、<br />
+入力画面から送信確認画面に進んでいました。<br />
+それを今日はリンクではなく！<br />
+さらに入力した内容を確認画面で表示する！！<br />
+という難しい内容に挑戦しました。</p>
+<h3>〜GETとPOSTの違い〜</h3>
+<p>HTTPというのは<br />
+リクエストするとレスポンスが返ってくるという<br />
+通信の方式のことをいいます。<br />
+そしてHTTPのリクエストの種類のことをメソッドといいます。</p>
+<p>ではこのことをふまえて<br />
+今日の内容にはいっていきましょう！</p>
+<p>？「GETメソッドとPOSTメソッドの違いを説明するね。<br />
+<span>　　</span>簡単にいうと、<br />
+<span>　　</span>GETメソッドは情報を取得したいというリクエストで、<br />
+<span>　　</span>POSTメソッドは情報を追加したいというリクエストだよ。」<br />
+姉妹「ほーほー」<br />
+ちなみに、主体はブラウザです。</p>
+<p><a href="/ruby-3/#Browser" target="_blank">リクエスト・レスポンスって？</a></p>
+<p>今まではaタグでリンクしていたから、<br />
+GETメソッドをリクエストで送られていたのです。<br />
+だから今回は、ユーザーが情報を入力して<br />
+その情報を追加したレスポンス（確認画面）がほしいので<br />
+POSTメソッドを使うわけなんですね。</p>
+<h3>〜挑戦！〜</h3>
+<p>これを理解して、早速姉妹は各自HPをあさり始めました。<br />
+発見したHPは二人とも同じでした！<br />
+→<a href="http://qiita.com/ms2sato/items/901d8c5ca77c1133522c" target="_blank">Sinatraでformを使ってPOSTしてみる</a><br />
+でもなかなか反映されません。<br />
+しかも姉妹二人とも同じところでつまづいていました。<br />
+※姉妹は確認画面のファイル名を「check.erb」にしています。</p>
+<p>まず、myapp.rbにこのソースコードを書きます。<br />
+<a href="/wp-content/uploads/2015/08/2015-08-28-15.50.59.png"><img src="/wp-content/uploads/2015/08/2015-08-28-15.50.59.png" alt="2015-08-28 15.50.59" width="230" height="81" class="alignnone size-full wp-image-313" /></a></p>
+<p>この＠emailや@messageは変数です。<br />
+またparamsというのを使うと、<br />
+パラメータを取得することができます。<br />
+今回でいえば、フォームで入力した値を<br />
+params[:パラメータ名]という使いかたで取得します。</p>
+<p>はい、姉妹がつまづいたポイントその１！！<br />
+ここでpostに変更しているので<br />
+index.erbのほうの送信ボタンに貼ってあったリンクがあれば<br />
+そのaタグを消さないと<br />
+<a href="/wp-content/uploads/2015/08/2015-08-28-15.51.58.png"><img src="/wp-content/uploads/2015/08/2015-08-28-15.51.58.png" alt="2015-08-28 15.51.58" width="1046" height="563" class="alignnone size-full wp-image-314" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/2015-08-28-15.51.58.png 1046w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/2015-08-28-15.51.58-300x161.png 300w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/2015-08-28-15.51.58-1024x551.png 1024w" sizes="(max-width: 1046px) 100vw, 1046px" /></a><br />
+こんなエラーが出てしまいます。<br />
+なぜなら、リンクがそのままだとボタンを押したときに<br />
+getのリクエストが送られて<br />
+「このcheckっていうページを取得したい！」<br />
+ってことになってしまうからです。<br />
+そのためSinatra側では、<br />
+「え、getのリクエストが送られてきてるのに<br />
+<span>　</span>get &#8216;/check&#8217;になってない！」<br />
+と混乱してしまって、エラーがでます。</p>
+<p>続いて、index.erbのファイルの中身なのですが<br />
+フォームを作る際、formタグで中を囲っているはずです。<br />
+そのformタグにaction =“check” method=“POST”と書きます。<br />
+<a href="/wp-content/uploads/2015/08/2015-08-28-15.53.30.png"><img src="/wp-content/uploads/2015/08/2015-08-28-15.53.30.png" alt="2015-08-28 15.53.30" width="354" height="20" class="alignnone size-full wp-image-315" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/2015-08-28-15.53.30.png 354w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/2015-08-28-15.53.30-300x17.png 300w" sizes="(max-width: 354px) 100vw, 354px" /></a><br />
+これは、フォームになにか入力し、送信ボタンを押したときに<br />
+「送信されるデータの送信先がcheckで、<br />
+<span>　</span>checkにPOST（追加）してください！お願いします！」<br />
+というリクエストを送るためです。<br />
+また、<br />
+メールアドレスを入力してもらうというソースコードが<br />
+inputタグになっていますよね。そこに、name=“email”と書きます。<br />
+同じく、本文のほうのtextareaタグのところにも<br />
+name=“message”と書きます。<br />
+<a href="/wp-content/uploads/2015/08/2015-08-28-16.04.04.png"><img src="/wp-content/uploads/2015/08/2015-08-28-16.04.04.png" alt="2015-08-28 16.04.04" width="175" height="39" class="alignnone size-full wp-image-325" /></a><br />
+こうしないと先ほど宣言した変数に、<br />
+入力した内容を代入することができなくなります。</p>
+<p>ちなみにフォームを作っている時以外でも<br />
+postでなにか表示させたいときには<br />
+formタグを使ってactionやmethodを指定しましょう！</p>
+<p>はい、つまづいたポイントその２！<br />
+ここで英語が苦手な妹登場です！！　しょうもないミスをしました。<br />
+わかりますか。そうです。スペルミスです。<br />
+しかもemailでもmessageでもなく、nameのほうです。<br />
+１つだけ「neme」にしてしまったのです。<br />
+妹「スペルミスには気をつけよう…」</p>
+<p>最後にcheck.erbの中身です。<br />
+入力した、メールアドレスと本文を表示させたいところに<br />
+<%=@email%><br />
+<%=@message%><br />
+と書きます。<br />
+<a href="/wp-content/uploads/2015/08/2015-08-28-15.54.57.png"><img src="/wp-content/uploads/2015/08/2015-08-28-15.54.57.png" alt="2015-08-28 15.54.57" width="174" height="151" class="alignnone size-full wp-image-318" /></a><br />
+そうすればそれぞれの変数に代入された、<br />
+入力された内容が反映されるはずです！！</p>
+<p>しかし、ここで問題発生！<br />
+妹「よっしゃー！！できたぞー！！！！」<br />
+姉「え……、さっきのエラーがでる」<br />
+妹「え！！なんで！！？？？」</p>
+<p>さあここから間違い探しが始まりました。<br />
+でもほんとになにが違うのかがわからない！！</p>
+<p>妹「method=“POST&#8221;のとこ、大文字じゃなきゃいけないとかある？」<br />
+姉「カタカタ…。いや小文字でも大丈夫だ。」<br />
+姉妹「うーーーーん。」<br />
+？「…文字拡大してみる？」<br />
+妹「ここの空白が全角だったりしてね！」<br />
+姉「いやーそんなことあるわけ！（とりあえず直す）<br />
+<span>　　</span>…あれ、幅変わった。え！もしかして！！」<br />
+そしてリロードして送信ボタンを押すと……！！<br />
+姉妹「きたーーーーーーー！！！！！！！！」</p>
+<p>…いやー、空白の全角、半角って怖いです。<br />
+わかりません。奇跡です。<br />
+姉「初歩的すぎて恥ずかしいよーー…」<br />
+よくある間違いらしいので気をつけましょう。</p>
+<p>今日のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/8fb1bc9306a4c83d0695cde3db1cb71edc2d9de8" target="_blank">こちら</a>です。<br />
+参考にしてくださいね！</p>
+	</div><!-- .entry-content -->
+
+	
+	
+</article><!-- #post-## -->
+
+<div class="space"></div>
+
+<article id="post-376" class="post-376 post type-post status-publish format-standard hentry category-ruby">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="/mail/" rel="bookmark">メール送信</a></h1>		<div class="line"></div>
+			<h2>2015/08/31/Mon</h2>
+			<div class="social">
+				<div class='wp_social_bookmarking_light'><div class="wsbl_hatena_button"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-title="" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"> <img src="//b.hatena.ne.jp/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="//b.hatena.ne.jp/js/bookmark_button.js" charset="utf-8" async="async"></script></div><div class="wsbl_facebook_like"><div id="fb-root"></div><fb:like href="" layout="button_count" action="like" width="100" share="false" show_faces="false" ></fb:like></div><div class="wsbl_twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-text="" data-lang="ja">Tweet</a></div></div><br class='wp_social_bookmarking_light_clear' />			</div>
+		<div class="line"></div>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>前回のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/8fb1bc9306a4c83d0695cde3db1cb71edc2d9de8" target="_blank">こちら</a></p>
+<p>今日は次のことをやりました。<br />
+１、送信完了画面を「〜/send-mail」でだす<br />
+２、POSTを使って、送信完了画面の表示<br />
+３、入力フォームで入力し、<br />
+確認画面で表示した内容を送信完了画面にもだす<br />
+４、mailgunとBundlerのインストール<br />
+５、「〜/test」とうってメール送信<br />
+６、送信ボタンをおして、メールを送信。表示は送信完了画面</p>
+<p>１、２は以前にもやった知識を活用すればできます。<br />
+忘れてしまった方はブログをご覧ください↓<br />
+・<a href="/ruby-3/" target="_blank">「〜/send-mail」でだす</a><br />
+・<a href="/ruby-4/" target="_blank">POST</a></p>
+<p>「ああああ、忘れたーーー。もうだめだーーー」<br />
+なんて思わなくても大丈夫です。<br />
+ブログを書いてる本人たちも結構忘れていましたから！笑</p>
+<p>さて、そんなこんなで１、２を軽くかわした姉妹でしたが、<br />
+３でつまずきました。<br />
+正確にいえば妹がつまづきました。<br />
+妹はブログの文章を担当しているので、<br />
+過去にやった内容はアウトプットができているので、<br />
+なんとなくわかるのですが、<br />
+新しいことに入るとつまづいてしまうのです。</p>
+<p>姉妹ともformタグらへんをかえるのは<br />
+なんとなくわかっていたのですが、<br />
+どのようなソースコードを書けばいいのかというのは、<br />
+姉が早くたどり着きました。</p>
+<p>姉「入力フォームから確認画面に持ってくることを<br />
+もう１回やりたいってことでしょ？<br />
+でもそのままのソースコードをもってきたら、<br />
+また入力フォームが表示されちゃうからなー。<br />
+その入力フォームを隠すためにはーー……。<br />
+hiddenとかつかうのかな？」</p>
+<p>姉の声を聞いた妹も早速hiddenを調べ、<br />
+ソースコードに書き足そうとするのですが、<br />
+どの部分をどのファイルに書き足せばいいのかわからない！！<br />
+姉にヒントをもらいながらやっとできました。<br />
+※確認：妹は入力フォーム画面をindex.erb、確認画面をcheck.erb、<br />
+送信完了画面をthank.erbにしています。<br />
+<a href="/wp-content/uploads/2015/09/2015-09-01-01.33.35.png"><img class="alignnone size-full wp-image-381" src="/wp-content/uploads/2015/09/2015-09-01-01.33.35.png" alt="2015-09-01 01.33.35" width="238" height="95" /></a><br />
+これがmyapp.rbのソースコード↑<br />
+<a href="/wp-content/uploads/2015/09/2015-09-01-01.34.06.png"><img class="alignnone size-full wp-image-382" src="/wp-content/uploads/2015/09/2015-09-01-01.34.06.png" alt="2015-09-01 01.34.06" width="472" height="300" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-01.34.06.png 472w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-01.34.06-300x191.png 300w" sizes="(max-width: 472px) 100vw, 472px" /></a><br />
+これがcheck.erbのソースコード↑<br />
+<a href="/wp-content/uploads/2015/09/2015-09-01-01.34.23.png"><img class="alignnone size-full wp-image-383" src="/wp-content/uploads/2015/09/2015-09-01-01.34.23.png" alt="2015-09-01 01.34.23" width="526" height="154" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-01.34.23.png 526w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-01.34.23-300x88.png 300w" sizes="(max-width: 526px) 100vw, 526px" /></a><br />
+これがthank.erbのソースコード↑</p>
+<p>index.erbの入力フォームのところで、<br />
+メールアドレスを入力するinputタグの中にname=“email”<br />
+内容を入力するtestareaのタグの中にname=“message”<br />
+と書いたと思います。<br />
+なので、check.erbに「&lt;input type = “hidden” 」<br />
+のあとのnameのところはそれぞれ同じnameを記述し、<br />
+valueのところには送りたい文字列を記述します。<br />
+今回の送りたい内容というのは、入力フォームにいれた文字ですよね。<br />
+その文字達は@emailと@messageにはいっているので<br />
+その変数を書きます。<br />
+そして表示させたいthank.erbのソースコードの中に<br />
+check.erbで記述した表示をするためのソースコードを書きます。</p>
+<p>これで３はクリアです！<br />
+４を行ないます。<br />
+なぜmailgunとBundlerをインストールしなくてはいけないのか<br />
+って疑問ですよね。<br />
+まずmailgunですが、<br />
+メール送信するために普通に１からソースコードを書いていたら<br />
+すっっっごく大変です。<br />
+それを解決してくれるのがmailgunです。<br />
+ただmailgunだけをいれて<br />
+ためしにメールを送信しようとすると<a href="/wp-content/uploads/2015/09/2015-09-01-14.12.52.png"><img class="alignnone size-full wp-image-413" src="/wp-content/uploads/2015/09/2015-09-01-14.12.52.png" alt="2015-09-01 14.12.52" width="517" height="123" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-14.12.52.png 517w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-14.12.52-300x71.png 300w" sizes="(max-width: 517px) 100vw, 517px" /></a><br />
+このようなエラーがでてしまいます。<br />
+この英語を姉に翻訳してもらった結果<br />
+RestClientが必要と言われていることがわかりました。<br />
+なので、これもインストールしなくてはいけないことがわかりました。<br />
+RestClientがGemらしいので<br />
+そのときにBundlerが必要になります。<br />
+Bundlerは、<br />
+Gemと呼ばれているいわゆるパッケージが新しいのがあったり、<br />
+古いのがあったりすると<br />
+Bundlerがないと正常に動いてくれないらしいのです。<br />
+要するにRubyのGemたちを管理してくれるものです。</p>
+<p>Bundlerをインストールしたらmyapp.rbと同じディレクトリの中に<br />
+「Gemfile」というテキストファイルを作って<br />
+その中にRestclientの名前を書き、<br />
+ターミナルでbundle installというコマンドを入力すれば<br />
+RestClientのインストールができます。<br />
+<a href="/wp-content/uploads/2015/09/2015-09-01-14.34.19.png"><img class="alignnone size-full wp-image-416" src="/wp-content/uploads/2015/09/2015-09-01-14.34.19.png" alt="2015-09-01 14.34.19" width="203" height="68" /></a></p>
+<p>仕組みはこんなイメージです。↓↓<br />
+<a href="/wp-content/uploads/2015/08/gem.png"><img class="alignnone size-full wp-image-377" src="/wp-content/uploads/2015/08/gem.png" alt="gem" width="678" height="547" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/gem.png 678w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/gem-300x242.png 300w" sizes="(max-width: 678px) 100vw, 678px" /></a></p>
+<p>・<a href="http://www.mailgun.com/" target="_blank">mailgunについて</a><br />
+・<a href="https://circlearound.co.jp/blog/1089#a3" target="_blank">Bundlerについて</a></p>
+<p>インストールをし終えて５に進みます。<br />
+ここで忘れてはいけないのですが、<br />
+先ほどインストールしたBundlerなどを<br />
+ソースコードに反映させなければいけないので、<br />
+<a href="/wp-content/uploads/2015/09/2015-09-01-01.38.57.png"><img class="alignnone size-full wp-image-384" src="/wp-content/uploads/2015/09/2015-09-01-01.38.57.png" alt="2015-09-01 01.38.57" width="194" height="37" /></a><br />
+だったのを<br />
+<a href="/wp-content/uploads/2015/09/2015-09-01-01.39.21.png"><img class="alignnone size-full wp-image-385" src="/wp-content/uploads/2015/09/2015-09-01-01.39.21.png" alt="2015-09-01 01.39.21" width="190" height="93" /></a><br />
+に変更しておきましょう</p>
+<p>そして、<br />
+メソッドを作るために<br />
+def ＜メソッド名＞<br />
+＜文＞<br />
+end<br />
+というメソッド定義を初めて使いました。<br />
+詳しくはこちらをご覧ください。→<a href="http://www.minituku.net/courses/566428009/lessons/660326487/texts/486582736?locale=ja" target="_blank">メソッド定義</a></p>
+<p>このdefと、以前から使っているgetを使って書いていくのですが、<br />
+実は何パターンか書き方があるのです。<br />
+まずは、<br />
+<a href="/wp-content/uploads/2015/09/2015-09-01-01.45.29.png"><img class="alignnone size-full wp-image-386" src="/wp-content/uploads/2015/09/2015-09-01-01.45.29.png" alt="2015-09-01 01.45.29" width="365" height="192" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-01.45.29.png 365w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-01.45.29-300x158.png 300w" sizes="(max-width: 365px) 100vw, 365px" /></a><br />
+次に<br />
+<a href="/wp-content/uploads/2015/09/2015-09-01-02.18.04.png"><img class="alignnone size-full wp-image-387" src="/wp-content/uploads/2015/09/2015-09-01-02.18.04.png" alt="2015-09-01 02.18.04" width="355" height="191" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-02.18.04.png 355w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-02.18.04-300x161.png 300w" sizes="(max-width: 355px) 100vw, 355px" /></a><br />
+です。<br />
+最後のソースコードで、<br />
+get endとdef endの順番も入れ替えても問題なく操作できます。<br />
+定義を先にしてしまうと<br />
+普通は「定義されてないぞ！？」と焦るのですが、<br />
+定義されてないとなるとget endの外側に出て探します。<br />
+そうすると、次に書いてあるdef endの中で<br />
+定義がされているので動かせるのです。<br />
+ここがうまくいけば、<br />
+「〜/test」のURLをうてばメールが送信されるはずです！</p>
+<p>最後に！！６です！<br />
+これができるようになれば、<br />
+送信フォームの完成に一歩近づいたような感じがしますよね！！<br />
+実は６って意外と簡単なんですよ。<br />
+５で書いたコードのURLを「test」ではなく「send-mail」に、<br />
+「get」を「post」に書き換えるだけです。<br />
+<a href="/wp-content/uploads/2015/09/2015-09-01-02.18.47.png"><img class="alignnone size-full wp-image-388" src="/wp-content/uploads/2015/09/2015-09-01-02.18.47.png" alt="2015-09-01 02.18.47" width="357" height="221" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-02.18.47.png 357w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-02.18.47-300x186.png 300w" sizes="(max-width: 357px) 100vw, 357px" /></a></p>
+<p>これは簡単！<br />
+そうすれば、送信ボタンをクリックするだけで<br />
+メールを送信できるようになると思いますよ！</p>
+<p>いままでのソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/a02dc5f70ef9bbfe3fccaf27e1cfb1a57b660a64" target="_blank">こちら</a></p>
+<p>ちなみにapi-keyをpushしないための設定があります。<br />
+GitHubは課金しない限りすべての人にデータがみられてしまいます。<br />
+それを防ぐためにこのような設定をしなくてはいけません。<br />
+参考サイトをご覧ください。<br />
+<a href="http://shuzo-kino.hateblo.jp/entry/2014/04/15/225517" target="_blank">公開したくない情報はdotenvにしまってしまう</a><br />
+<a href="http://blog.ruedap.com/2011/05/03/ruby-heroku-web-app-development-tips-5" target="_blank">HerokuでWebアプリ開発を始めるなら知っておきたいこと</a></p>
+<p>この中には.envの内容を隠すようにという指示を<br />
+.gitignore(次回説明します！)に書いてしまったので<br />
+プッシュされていなくて.envの内容がわからないと思います。<br />
+.envの内容は見せたくない内容なのでそれが正解なのですが<br />
+今回はわかりやすいように、画像をはりますね！！<br />
+<a href="/wp-content/uploads/2015/09/2015-09-10-22.30.54.png"><img src="/wp-content/uploads/2015/09/2015-09-10-22.30.54.png" alt="2015-09-10 22.30.54" width="198" height="52" class="alignnone size-full wp-image-572" /></a><br />
+本当に隠したい部分を「ほにゃらら」に変えましたが、<br />
+このような感じに書いてあれば正解ですよ！</p>
+<p>そして、myapp.rbに<br />
+require &#8216;dotenv&#8217;<br />
+Dotenv.load<br />
+を付け加え、さらに<br />
+Gemfileに<br />
+gem &#8216;dotenv&#8217;を書きたすのを忘れずに！！<br />
+最後にターミナルでbundle installと打てば<br />
+正常に動くはずですよ。</p>
+<p>今回のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/275d84ab982abbb9acc1b87901aa5773a3f49b98" target="_blank">こちら</a><br />
+参考にしてくださいね！</p>
+<p>*:..。o○☆○o。..:*</p>
+<p>実は私たち、毎回お菓子を食べながら勉強しています笑<br />
+で、今更なんですが笑、「今日のお菓子」シリーズ始めます！！！</p>
+<p><a href="/wp-content/uploads/2015/09/2015-08-31-15.47.00.jpg"><img class="size-medium wp-image-420" src="/wp-content/uploads/2015/09/2015-08-31-15.47.00-300x169.jpg" alt="DSC_1371" width="300" height="169" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-08-31-15.47.00-300x169.jpg 300w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-08-31-15.47.00-1024x576.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a><br />
+ガルボの紫いも味を食べたんですけど、<br />
+紫いも！！！！！！！！！！！！！って感じでした笑</p>
+	</div><!-- .entry-content -->
+
+	
+	
+</article><!-- #post-## -->
+
+<div class="space"></div>
+
+<article id="post-439" class="post-439 post type-post status-publish format-standard hentry category-git category-ruby">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="/mail-2/" rel="bookmark">入力した内容をメールに反映させよう！　</a></h1>		<div class="line"></div>
+			<h2>2015/09/01/Tue</h2>
+			<div class="social">
+				<div class='wp_social_bookmarking_light'><div class="wsbl_hatena_button"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-title="" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"> <img src="//b.hatena.ne.jp/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="//b.hatena.ne.jp/js/bookmark_button.js" charset="utf-8" async="async"></script></div><div class="wsbl_facebook_like"><div id="fb-root"></div><fb:like href="" layout="button_count" action="like" width="100" share="false" show_faces="false" ></fb:like></div><div class="wsbl_twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-text="" data-lang="ja">Tweet</a></div></div><br class='wp_social_bookmarking_light_clear' />			</div>
+		<div class="line"></div>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>前回のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/275d84ab982abbb9acc1b87901aa5773a3f49b98" target="_blank">こちら</a></p>
+<p>・.gitignoreを調べて設定<br />
+・入力した内容をメールの本文として送信<br />
+　→引数をつかう<br />
+　→文字列の連結<br />
+という内容を今日は行いました。</p>
+<p>さあ前回の最後にでてきた<br />
+.gitignoreですが簡単に言うと、<br />
+gitで管理しないファイルを無視させるファイルのことです。<br />
+なぜ.gitignoreファイルを作ったのかというと、<br />
+今までにgemをインストールしたと思います。<br />
+自分たちが認識していれたgem以外にもセットでインストールされてる<br />
+gemが実はたくさんあるのです。<br />
+さあ、SourceTreeを見てみてください！<br />
+…どうですか？1700くらいありませんか？<br />
+妹は思わずスクショしました。<br />
+<a href="/wp-content/uploads/2015/09/2015-09-01-13.55.24.png"><img src="/wp-content/uploads/2015/09/2015-09-01-13.55.24.png" alt="2015-09-01 13.55.24" width="462" height="45" class="alignnone size-full wp-image-463" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-13.55.24.png 462w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-01-13.55.24-300x29.png 300w" sizes="(max-width: 462px) 100vw, 462px" /></a><br />
+これらを全部コミットしてプッシュするとしたら大変ですよね。<br />
+そのgemをgitで管理しないようにするためのファイルが<br />
+.gitignoreなのです！！<br />
+また、他人にみせたくない情報が書かれているファイルを<br />
+管理しないようにするためにも使用します。</p>
+<p>姉妹はbundleというディレクトリと<br />
+vendorのディレクトリにあるbundleのディレクトリを<br />
+管理しないようにしたいので<br />
+# Ignore bundler config.<br />
+/.bundle<br />
+/vendor/bundle<br />
+というのを.gitignoreの中に記述します。<br />
+そうすれば、1700もあったのが一気になくなりますよ！</p>
+<p>さらに、.envと記述すると、前回妹が設定したように<br />
+.envの中身もプッシュされないように変更できます。</p>
+<p>ちなみに、「.ファイル名」のように「.」から始まるファイルは<br />
+隠しファイルと呼ばれるものです。<br />
+これを表示させる方法はこちらをご覧ください。<br />
+<a href="http://inforati.jp/apple/mac-tips-techniques/system-hints/how-to-show-hidden-file-or-folder-of-macos.html" target="_blank">隠しファイル表示方法</a></p>
+<p>さて、これから入力した内容を反映させて<br />
+送信できるようにしていきたいと思います。</p>
+<p>前回、get endとdef endを組み込んで書いてもいい<br />
+というお話をしたの覚えていますか？<br />
+それはpost endとdef endでも同じです。<br />
+しかしそれは一般的ではなく、<br />
+他の人がそのコードを見たときに<br />
+わかりづらいのでわけて書きましょう。</p>
+<p>今までの知識を使おうとすると<br />
+＠つけて変数にすれば反映できそうって思いますよね。<br />
+ところがどっこい、<br />
+＠はget/postなどからendの間しか<br />
+変数としての役割をもたないのです。<br />
+今回のようにpost endとdef endをわけて書くと<br />
+＠はなにも役にたたなくなるのです。</p>
+<p>困ったー。<br />
+また姉妹の検索との戦いが始まりました。<br />
+妹「『def ruby』で検索検索ーーっっ！あ、引数つかうっぽい！」<br />
+？「正解！」<br />
+def endを初めて使うとき、<br />
+メソッド定義が詳しく書いてあるURLをリンクとして載せました。<br />
+そこに引数のあるメソッドを定義するというのがでてきているのです。<br />
+姉妹は学校で少しC言語をやっていて、<br />
+引数のことを少し知っていましたが<br />
+やはり仕組みは少し違っていて<br />
+とことん意味を知りたくなる姉は少し戸惑っていました。<br />
+妹が見つけたURL<br />
+<a href="http://www.rubylife.jp/ini/method/index2.html" target="_blank">メソッドの定義と呼び出し</a><br />
+<a href="http://www.rubylife.jp/ini/method/index3.html" target="_blank">引数を付けたメソッド呼び出し</a><br />
+このサイトを参考にして頑張りました！</p>
+<p><a href="/wp-content/uploads/2015/09/2015-09-04-00.57.501.png"><img src="/wp-content/uploads/2015/09/2015-09-04-00.57.501.png" alt="2015-09-04-00.57.50" width="704" height="282" class="alignnone size-full wp-image-563" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-04-00.57.501.png 704w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-04-00.57.501-300x120.png 300w" sizes="(max-width: 704px) 100vw, 704px" /></a><br />
+こんな感じです！<br />
+send_simple_messageと書かれているのがメソッドで、<br />
+その後ろに（）で囲まれているのが引数になります。<br />
+post endの中に書かれている@emailと@messageの文ですが<br />
+それは最後に送信完了画面に表示させるやつで<br />
+ここでは関係ありません。</p>
+<p><a href="/wp-content/uploads/2015/09/taioububun.png"><img src="/wp-content/uploads/2015/09/taioububun.png" alt="taioububun" width="704" height="282" class="alignnone size-full wp-image-567" /></a></p>
+<p>このスクショの中に<br />
+send_simple_message<br />
+という文が２つ出てきていますよね。<br />
+その（）で囲まれている１つ目同士が対応しています。<br />
+そのためdef endの中で<br />
+「email」と「message」の変数が使えるようになっているのです。<br />
+ちなみに最後の:textの文ですが[]で囲むことで配列を使っています。<br />
+これは、メールアドレスと内容がそのまま本文に表示されます。<br />
+ただこれだとお問い合わせフォームとして利用していく中で<br />
+メールを受け取った側が見づらいですよね。</p>
+<p>そこで、これから文字列の連結というのをやってきます。<br />
+また検索し始めたのですが、これがなかなかヒットしないのです。<br />
+姉が先に見つけてソースコードを書いている中、<br />
+見当違いなものばかりヒットさせる妹。<br />
+でも！妹に奇跡がおきます！！<br />
+妹「そういや、”と’の違いってなんだろう・・・」<br />
+それを調べていると、<br />
+妹「え、これ？？？」<br />
+そうです、なぜか答えにたどり着いてしまったのです。<br />
+妹もこれにはびっくり。<br />
+このときのサイトが<a href="http://blog.quellencode.org/post/78599028005/ruby%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97%E3%83%AA%E3%83%86%E3%83%A9%E3%83%AB%E3%81%AE%E4%BD%BF%E3%81%84%E5%88%86%E3%81%91" target="_blank">こちら</a>です。</p>
+<p>そのサイトを参考にして頑張った結果、<br />
+このようなソースコードになりました！<br />
+<a href="/wp-content/uploads/2015/09/2015-09-04-17.50.22.png"><img src="/wp-content/uploads/2015/09/2015-09-04-17.50.22.png" alt="2015-09-04 17.50.22" width="559" height="240" class="alignnone size-full wp-image-467" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-04-17.50.22.png 559w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-04-17.50.22-300x129.png 300w" sizes="(max-width: 559px) 100vw, 559px" /></a><br />
+変わった部分わかりますか？<br />
+…最後の１行だけです。ややこしくしてすいません。<br />
+#{}で変数を囲って、自分なりの文章を打てばいいだけです！<br />
+例えば<br />
+メールアドレスがmiki@miki.comで本文にこんにちはといれたとします。<br />
+今回妹が作成した文だと、<br />
+miki@miki.comさんからお問い合わせがありました。<br />
+内容：こんにちは<br />
+となるわけです！<br />
+ちなみの\nは改行を意味しています。</p>
+<p>今日の内容はここまで！！<br />
+お問い合わせフォームまであと少しです！</p>
+<p>スクショの中の:to =>のあとにmikiと書かれていますが、<br />
+これはなんでもいいので、ここから見本のソースコードにはformと書きます。</p>
+<p>今回のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/b1cc388ba26c3cf5c817c70174051c8e90886480" target="_blank">こちら</a><br />
+参考にしてくださいね！</p>
+	</div><!-- .entry-content -->
+
+	
+	
+</article><!-- #post-## -->
+
+<div class="space"></div>
+
+<article id="post-446" class="post-446 post type-post status-publish format-standard hentry category-ruby">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="/finish/" rel="bookmark">お問い合わせフォーム完成！！！</a></h1>		<div class="line"></div>
+			<h2>2015/09/04/Fri</h2>
+			<div class="social">
+				<div class='wp_social_bookmarking_light'><div class="wsbl_hatena_button"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-title="" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"> <img src="//b.hatena.ne.jp/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="//b.hatena.ne.jp/js/bookmark_button.js" charset="utf-8" async="async"></script></div><div class="wsbl_facebook_like"><div id="fb-root"></div><fb:like href="" layout="button_count" action="like" width="100" share="false" show_faces="false" ></fb:like></div><div class="wsbl_twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-text="" data-lang="ja">Tweet</a></div></div><br class='wp_social_bookmarking_light_clear' />			</div>
+		<div class="line"></div>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>前回のソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/cf1f25280ef1b5225071e4a292d23dfc3be063c3" target="_blank">こちら</a></p>
+<h2>-完成させるぞ！！-</h2>
+<p>今日はSinatra側からテーブルをいじってみます！<br />
+前回myapp.rbのところに<br />
+require’yaml’から、class〜endって書いていて、<br />
+classの後ろがSampleになってますよね。<br />
+これは自分が考えたテーブルの名前を<br />
+単数で最初の文字を大文字にしたものです。<br />
+migrationでつくったときに作成されていた<br />
+schema.rbを開くと<br />
+テーブルがちゃんとあるか確認することができます。</p>
+<p>せっかく入力フォームをつくってメールを送っていますが、<br />
+このままだと送ったデータが残らないですよね。<br />
+ここでデータベースの出番です！<br />
+入力フォームで入力した情報をテーブルに保存してみましょう。</p>
+<h3>〜情報をテーブルに保存しよう〜</h3>
+<p>samplesをそのまま使ってもいいのですが、<br />
+入力フォームということで<br />
+mailsというテーブルを作りたいと思います。<br />
+そうするとsamplesが邪魔ですよね。<br />
+そのままとっておいてもいいのですが<br />
+こんがらがりそうなので削除してしまいましょう。<br />
+これは簡単！<br />
+ターミナルで「bundle exec rake db:rollback」<br />
+をうつだけです。<br />
+これは一つ前に戻るという意味なのです。</p>
+<p>そしてここでmigrationすると<br />
+また同じように作ってしまうので、<br />
+migrationファイルを消します。<br />
+そしてもう一度、mails用のmigrationファイルをつくります。</p>
+<p><a href="/wp-content/uploads/2015/09/2015-09-06-21.07.53.png"><img src="/wp-content/uploads/2015/09/2015-09-06-21.07.53.png" alt="2015-09-06 21.07.53" width="308" height="140" class="alignnone size-full wp-image-520" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-06-21.07.53.png 308w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-06-21.07.53-300x136.png 300w" sizes="(max-width: 308px) 100vw, 308px" /></a></p>
+<p>そして<br />
+samplesを消したのでclassの後ろをMailに変えます。<br />
+<a href="/wp-content/uploads/2015/09/2015-09-06-21.37.57.png"><img src="/wp-content/uploads/2015/09/2015-09-06-21.37.57.png" alt="2015-09-06 21.37.57" width="226" height="37" class="alignnone size-full wp-image-527" /></a><br />
+こんな感じです。<br />
+ではこれを元に入力フォームで入力した内容を<br />
+データベースにいれられるようにしましょう。</p>
+<p>さて、入力したemail情報を入れていきますよ！！<br />
+このサイトを参考にしてやっていきましょう！<br />
+<a href="http://www.atmarkit.co.jp/ait/articles/1405/30/news036.html" target="_blank">ActiveRecordの基本機能とマイグレーション、バリデーション</a></p>
+<p>myaap.rbのファイルの中に<br />
+mail = Mail.new<br />
+mail.email=@email<br />
+mail.message=@message<br />
+mail.save<br />
+これを入力します。<br />
+<a href="/wp-content/uploads/2015/09/2015-09-06-21.16.31.png"><img src="/wp-content/uploads/2015/09/2015-09-06-21.16.31.png" alt="2015-09-06 21.16.31" width="397" height="151" class="alignnone size-full wp-image-528" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-06-21.16.31.png 397w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-06-21.16.31-300x114.png 300w" sizes="(max-width: 397px) 100vw, 397px" /></a><br />
+こんな感じ！！<br />
+@emailと@messageには以前からもお伝えしている内容が<br />
+既に入力されていますよね。<br />
+それをmail.emailとmail.messageにいれるのです。<br />
+これはmailというテーブルのemailというカラム名のところに<br />
+email情報をいれるということです。</p>
+<p>ここで面白い会話とか入れられたらいいんですけどね…<br />
+姉妹とも調べ学習に集中して会話そこまでなんですよね…<br />
+でもこれはいいことですよ！！！<br />
+自分たちで調べようという心意気！！<br />
+ほめてください！！！（切実）</p>
+<p>…話を戻します。<br />
+そして、これをすれば！<br />
+データベースをいれられてるはずなのです！！<br />
+これを確認するためには前から使っていた<br />
+localhostを使って確かめます。<br />
+ターミナルで一時的にサーバを立ち上げて<br />
+まずはメールを送ります。<br />
+そのあとにpostgresにログインして<br />
+テーブルの中を見てみましょう！！<br />
+どうですか？入っていたら成功です！！！</p>
+<h3>〜Herokuでもデータベースをつかおう〜</h3>
+<p>でもこれだとせっかく一般公開できるように<br />
+アプリケーションをHerokuの中にいれたのに<br />
+入力フォームに入力した情報は保存されないままに<br />
+なってしまっていますね。<br />
+これではまずい！！<br />
+ってことでHerokuでもデータベースを<br />
+つかえるように設定しましょう！<br />
+こちらのサイトをご覧ください！！<br />
+そして頑張って！（妹投げやり）<br />
+<a href="http://qiita.com/myokkie/items/6f65db5d53f19d34a27c" target="_blank">herokuでDBをできるようにする</a></p>
+<p>この時にdatabaseのURLをプッシュするのはよくないので、<br />
+プッシュしないように設定しましょう！<br />
+これは今までやりましたよ！<br />
+そうです。.envファイルに書き足せばいいのです！<br />
+そしてmyapp.rbも変更しておいてくださいね。<br />
+<a href="/wp-content/uploads/2015/09/2015-09-17-18.35.34.png"><img src="/wp-content/uploads/2015/09/2015-09-17-18.35.34.png" alt="2015-09-17 18.35.34" width="460" height="37" class="alignnone size-full wp-image-648" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-17-18.35.34.png 460w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-17-18.35.34-300x24.png 300w" sizes="(max-width: 460px) 100vw, 460px" /></a><br />
+↓　↓　↓　↓　↓　↓<br />
+<a href="/wp-content/uploads/2015/09/2015-09-17-18.35.52.png"><img src="/wp-content/uploads/2015/09/2015-09-17-18.35.52.png" alt="2015-09-17 18.35.52" width="429" height="27" class="alignnone size-full wp-image-649" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-17-18.35.52.png 429w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/09/2015-09-17-18.35.52-300x19.png 300w" sizes="(max-width: 429px) 100vw, 429px" /></a><br />
+こんな感じに！</p>
+<p>はいはいはい！！<br />
+これが設定できたら、<br />
+コミットしてー<br />
+ターミナルでプッシュしてー<br />
+「heroku run bundle exec rake db:migrate」<br />
+をターミナルでうちこんでー<br />
+Herokuで設定したURLにアクセスして<br />
+メールを送ってみてください！！<br />
+送れましたか？<br />
+ここで！<br />
+どうテーブルに反映されたかという確認方法なのですが！<br />
+かっこよく受信件数の表示なんてさせてみましょう（にやり）</p>
+<h3>〜受信件数の表示方法〜</h3>
+<p>myapp.rbのindexところのget end内に<br />
+@count = Mail.count<br />
+を追加し、index.erb に<br />
+受信件数 <%=@count%>件<br />
+を追加するだけです！<br />
+この仕組みはもうおわかりですよね！<br />
+送信してみてTOPページに戻って件数が増えていたら…！！</p>
+<p>完成です！！！<br />
+ひゃーーーーーー<br />
+姉妹「おつかれさまでした！！！！」<br />
+これで完成なのですよおおおお<br />
+叫んでいいですよ、叫びましょう。<br />
+ひとつアプリケーションつくれたんですもの！！！</p>
+<p>完成したソースコードは<a href="https://github.com/rubyjo/ruby-rubyjo/tree/aa1052e1575c00e72b55f75327f9800208852f8d" target="_blank">こちら</a>！！！</p>
+<h3>〜最後に〜</h3>
+<p>プログラミングに苦手意識があり、あまりさわったことがなかったぽんこつ姉妹ですが、３週間でお問い合わせフォームという立派なアプリをつくることができました！だからこれをみて少しでも興味を持ってくださった方、お問い合わせフォームをつくってみたいなっと思ってくださった方！<br />
+大丈夫です。つくれます。<br />
+ぽんこつ姉妹がつくれたのですから！笑<br />
+いつかのブログにもありますが、まずは慣れることが大事だと思います！意味はわからなくても、見本のソースコードをクローンして動かしてみましょう(^^)</p>
+	</div><!-- .entry-content -->
+
+	
+	
+</article><!-- #post-## -->
+
+<div class="space"></div>
+
+		</main><!-- .site-main -->
+	</section><!-- .content-area -->
+
+	</div><!-- .site-content -->
+
+	<div id="sidebar" class="sidebar">
+						<h4>はじめに</h4>
+				<div class="caption">
+					<p>
+					このサイトは、Webプログラミング超初心者の女子大生2人によるブログです。htmlやCSSなどの基礎から始め、Sinatraを用いてRubyを勉強しました。3週間でどこまでできるようになったのか！？
+					<a target="_blank" href="http://circlearound.co.jp/training/">WEBプログラミング個別トレーニング</a>を行っているサークルアラウンド株式会社さんの研修を受けました。
+					</p>
+					<p>
+						作成したのは<a href="https://rubyjoform.herokuapp.com/" target="_blank">簡単なお問い合わせフォーム</a>です。デザインに凝ったりするところまではできていませんが、システムは動かせるようになりました。フォームを通して励ましのメッセージをいただけたらとっても嬉しいです！
+					</p>
+				</div>
+	<div id="secondary" class="secondary">
+
+		
+		
+					<div id="widget-area" class="widget-area" role="complementary">
+						<aside id="recent-posts-2" class="widget widget_recent_entries">		<h4 class="widget-title">投稿一覧</h4>		<ul>
+					<li>
+				<a href="/finish/">お問い合わせフォーム完成！！！</a>
+						</li>
+					<li>
+				<a href="/database/">データベース</a>
+						</li>
+					<li>
+				<a href="/heroku/">Herokuを扱ってみよう</a>
+						</li>
+					<li>
+				<a href="/mail-2/">入力した内容をメールに反映させよう！　</a>
+						</li>
+					<li>
+				<a href="/mail/">メール送信</a>
+						</li>
+					<li>
+				<a href="/ruby-4/">入力した内容の表示</a>
+						</li>
+					<li>
+				<a href="/ruby-3/">別ページに移動してみよう！</a>
+						</li>
+					<li>
+				<a href="/ruby-2/">HTMLファイルを出すためには？</a>
+						</li>
+					<li>
+				<a href="/ruby/">ついに！Rubyに挑戦！！</a>
+						</li>
+					<li>
+				<a href="/git-3/">gitを使ってみる【解決編】</a>
+						</li>
+					<li>
+				<a href="/bootstrap/">Bootstrapを使ってみた</a>
+						</li>
+					<li>
+				<a href="/git-2/">gitを使ってみる【撃沈編】</a>
+						</li>
+					<li>
+				<a href="/git/">gitを使ってみる【準備編】</a>
+						</li>
+					<li>
+				<a href="/1/">紙芝居をつくろう</a>
+						</li>
+					<li>
+				<a href="/hello/">はじめまして(*^^*)</a>
+						</li>
+				</ul>
+		</aside>		<aside id="categories-2" class="widget widget_categories"><h4 class="widget-title">カテゴリ</h4>		<ul>
+	<li class="cat-item cat-item-3"><a href="/category/git/" title="gitについて！">git</a> (4)
+</li>
+	<li class="cat-item cat-item-4 current-cat"><a href="/category/ruby/" title="rubyについて！">ruby</a> (7)
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/web/" title="WEBについて！">web</a> (2)
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/none/" >未分類</a> (3)
+</li>
+		</ul>
+</aside><aside id="search-2" class="widget widget_search"><h4 class="widget-title">検索</h4><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">検索:</span>
+					<input type="search" class="search-field" placeholder="検索 &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit screen-reader-text" value="検索" />
+			</form></aside><aside id="meta-2" class="widget widget_meta"><h4 class="widget-title">その他</h4>			<ul>
+						<li><a href="/wp-login.php">ログイン</a></li>
+			<li><a href="/feed/">投稿の <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">コメントの <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://ja.wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>			</div><!-- .widget-area -->
+		
+	</div><!-- .secondary -->
+
+	</div><!-- .sidebar -->
+
+</div><!-- .site -->
+
+
+<div id="footer" class="site-footer" role="contentinfo">
+		<div id="footer-image"></div>
+		<div id="footer-text">
+			<a href="https://circlearound.co.jp/"><img id="logo" src="/wp-content/themes/rubyjo/image/source/logo_big.png"></a>
+			<p>Copyright(c) 2015 Rubyjo CircleAround Inc. All Rights Reserved.</p>
+		</div>
+</div><!-- .site-footer -->
+
+
+
+<!-- BEGIN: WP Social Bookmarking Light -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<!-- END: WP Social Bookmarking Light -->
+<script type='text/javascript' src="/wp-content/themes/rubyjo/js/skip-link-focus-fix.js?ver=20141010"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"<span class=\"screen-reader-text\">\u30b5\u30d6\u30e1\u30cb\u30e5\u30fc\u3092\u5c55\u958b<\/span>","collapse":"<span class=\"screen-reader-text\">\u30b5\u30d6\u30e1\u30cb\u30e5\u30fc\u3092\u9589\u3058\u308b<\/span>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src="/wp-content/themes/rubyjo/js/functions.js?ver=20150330"></script>
+<script type='text/javascript' src="/wp-includes/js/wp-embed.min.js?ver=4.8.1"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-32434659-2'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<script src="/wp-content/themes/rubyjo/js/jquery-2.1.4.min.js"></script>
+<script src="/wp-content/themes/rubyjo/js/jquery.easing.1.3.js"></script>
+<script src="/wp-content/themes/rubyjo/js/scroll.js"></script>
+
+</body>
+</html>

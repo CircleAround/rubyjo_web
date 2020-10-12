@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta http-equiv="Last-Modified" content="Wed, 30 Aug 2017 08:01:51 GMT">
+	<meta charset="UTF-8">
+	<!--<meta name="viewport" content="width=device-width">-->
+
+	<meta property="og:title" content=" &raquo; 分からなかったこと" />
+
+		<meta property="og:type" content="article" />
+	
+	<meta property="og:description" content="Webプログラミング超初心者の女子大生2人によるブログです。htmlやCSSなどの基礎から始め、Sinatraを用いてRubyを勉強しました。3週間でどこまでできるようになったのか！？WEBプログラミング個別トレーニングを行っているサークルアラウンド株式会社さんの研修を受けました。" />
+	<meta property="og:image" content="https://rubyjo.circlearound.co.jp/wp-content/themes/rubyjo/image/header.jpg" />
+	<meta property="og:site_name" content="ぽんこつ姉妹のRuby女子会   〜基礎からWebはじめました〜" />
+	<meta property="og:locale" content="ja_JP" />
+	<meta property="fb:app_id" content="436901683160289" />
+
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" href="/favicon.ico" >
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/rubyjo/js/html5.js"></script>
+	<![endif]-->
+	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>分からなかったこと &#8211; ぽんこつ姉妹のRuby女子会   〜基礎からWebはじめました〜</title>
+<link rel='dns-prefetch' href="//fonts.googleapis.com" />
+<link rel='dns-prefetch' href="//s.w.org" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/rubyjo.circlearound.co.jp\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.1"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='twentyfifteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href="/wp-content/themes/rubyjo/genericons/genericons.css?ver=3.2" type='text/css' media='all' />
+<link rel='stylesheet' id='twentyfifteen-style-css'  href="/wp-content/themes/rubyjo/style.css?ver=4.8.1" type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfifteen-ie-css'  href="/wp-content/themes/rubyjo/css/ie.css?ver=20141010" type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentyfifteen-ie7-css'  href="/wp-content/themes/rubyjo/css/ie7.css?ver=20141010" type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src="/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+<script type='text/javascript' src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+<script type='text/javascript' src="/wp-content/themes/rubyjo/js/keyboard-image-navigation.js?ver=20141010"></script>
+<link rel='https://api.w.org/' href="/wp-json/" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.8.1 with StaticPress ver.0.4.5" />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frubyjo.circlearound.co.jp%2F%25e5%2588%2586%25e3%2581%258b%25e3%2582%2589%25e3%2581%25aa%25e3%2581%258b%25e3%2581%25a3%25e3%2581%259f%25e3%2581%2593%25e3%2581%25a8%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frubyjo.circlearound.co.jp%2F%25e5%2588%2586%25e3%2581%258b%25e3%2582%2589%25e3%2581%25aa%25e3%2581%258b%25e3%2581%25a3%25e3%2581%259f%25e3%2581%2593%25e3%2581%25a8%2F&#038;format=xml" />
+<!-- BEGIN: WP Social Bookmarking Light -->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<style type="text/css">
+.wp_social_bookmarking_light{
+    border: 0 !important;
+    padding: 10px 0 0 0 !important;
+    margin: 0 !important;
+    float: right;
+}
+.wp_social_bookmarking_light div{
+    float: left !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 5px 0px 0 !important;
+    min-height: 30px !important;
+    line-height: 18px !important;
+    text-indent: 0 !important;
+}
+.wp_social_bookmarking_light img{
+    border: 0 !important;
+    padding: 0;
+    margin: 0;
+    vertical-align: top !important;
+}
+.wp_social_bookmarking_light_clear{
+    clear: both !important;
+}
+#fb-root{
+    display: none;
+}
+.wsbl_twitter{
+    width: 100px;
+}
+.wsbl_facebook_like iframe{
+    max-width: none !important;
+}</style>
+<!-- END: WP Social Bookmarking Light -->
+</head>
+
+<body class="attachment attachment-template-default single single-attachment postid-60 attachmentid-60 attachment-png">
+<div id="container" class="hfeed site">
+	<a href="/"><img class="top" src="/wp-content/themes/rubyjo/image/header.jpg"></a>
+<div class="space"></div>	
+        <div id="main" class="site-content">
+	<div id="primary" class="content-area">
+		<main class="site-main" role="main">
+
+			
+				<article id="post-60" class="post-60 attachment type-attachment status-inherit hentry">
+
+					<nav id="image-navigation" class="navigation image-navigation">
+						<div class="nav-links">
+							<div class="nav-previous"></div><div class="nav-next"><a href="/http/">次の画像</a></div>
+						</div><!-- .nav-links -->
+					</nav><!-- .image-navigation -->
+
+					<header class="entry-header">
+						<h1 class="entry-title">分からなかったこと</h1>					</header><!-- .entry-header -->
+
+					<div class="entry-content">
+
+						<div class="entry-attachment">
+							<img width="660" height="217" src="/wp-content/uploads/2015/08/分からなかったこと.png" class="attachment-large size-large" alt="" srcset="https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/分からなかったこと.png 1000w, https://rubyjo.circlearound.co.jp/wp-content/uploads/2015/08/分からなかったこと-300x99.png 300w" sizes="(max-width: 660px) 100vw, 660px" />
+							
+						</div><!-- .entry-attachment -->
+
+											</div><!-- .entry-content -->
+
+					<footer class="entry-footer">
+						<span class="posted-on"><span class="screen-reader-text">投稿日: </span><a href="/%e5%88%86%e3%81%8b%e3%82%89%e3%81%aa%e3%81%8b%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8/" rel="bookmark"><time class="entry-date published updated" datetime="2015-08-20T18:10:54+00:00">2015年8月20日</time></a></span><span class="full-size-link"><span class="screen-reader-text">フルサイズ </span><a href="/wp-content/uploads/2015/08/分からなかったこと.png">1000 &times; 329</a></span>											</footer><!-- .entry-footer -->
+
+				</article><!-- #post-## -->
+
+				
+<div id="comments" class="comments-area">
+
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">コメントを残す <small><a rel="nofollow" id="cancel-comment-reply-link" href="/分からなかったこと/#respond" style="display:none;">コメントをキャンセル</a></small></h3><p class="must-log-in">コメントを投稿するには<a href="/wp-login.php?redirect_to=https%3A%2F%2Frubyjo.circlearound.co.jp%2F%25e5%2588%2586%25e3%2581%258b%25e3%2582%2589%25e3%2581%25aa%25e3%2581%258b%25e3%2581%25a3%25e3%2581%259f%25e3%2581%2593%25e3%2581%25a8%2F">ログイン</a>してください。</p>	</div><!-- #respond -->
+	
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">投稿ナビゲーション</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="/%e5%88%86%e3%81%8b%e3%82%89%e3%81%aa%e3%81%8b%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8/" rel="prev"><span class="post-title">分からなかったこと</span> <span class="meta-nav">内で公開</span></a></div></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+	</div><!-- .site-content -->
+
+	<div id="sidebar" class="sidebar">
+						<h4>はじめに</h4>
+				<div class="caption">
+					<p>
+					このサイトは、Webプログラミング超初心者の女子大生2人によるブログです。htmlやCSSなどの基礎から始め、Sinatraを用いてRubyを勉強しました。3週間でどこまでできるようになったのか！？
+					<a target="_blank" href="http://circlearound.co.jp/training/">WEBプログラミング個別トレーニング</a>を行っているサークルアラウンド株式会社さんの研修を受けました。
+					</p>
+					<p>
+						作成したのは<a href="https://rubyjoform.herokuapp.com/" target="_blank">簡単なお問い合わせフォーム</a>です。デザインに凝ったりするところまではできていませんが、システムは動かせるようになりました。フォームを通して励ましのメッセージをいただけたらとっても嬉しいです！
+					</p>
+				</div>
+	<div id="secondary" class="secondary">
+
+		
+		
+					<div id="widget-area" class="widget-area" role="complementary">
+						<aside id="recent-posts-2" class="widget widget_recent_entries">		<h4 class="widget-title">投稿一覧</h4>		<ul>
+					<li>
+				<a href="/finish/">お問い合わせフォーム完成！！！</a>
+						</li>
+					<li>
+				<a href="/database/">データベース</a>
+						</li>
+					<li>
+				<a href="/heroku/">Herokuを扱ってみよう</a>
+						</li>
+					<li>
+				<a href="/mail-2/">入力した内容をメールに反映させよう！　</a>
+						</li>
+					<li>
+				<a href="/mail/">メール送信</a>
+						</li>
+					<li>
+				<a href="/ruby-4/">入力した内容の表示</a>
+						</li>
+					<li>
+				<a href="/ruby-3/">別ページに移動してみよう！</a>
+						</li>
+					<li>
+				<a href="/ruby-2/">HTMLファイルを出すためには？</a>
+						</li>
+					<li>
+				<a href="/ruby/">ついに！Rubyに挑戦！！</a>
+						</li>
+					<li>
+				<a href="/git-3/">gitを使ってみる【解決編】</a>
+						</li>
+					<li>
+				<a href="/bootstrap/">Bootstrapを使ってみた</a>
+						</li>
+					<li>
+				<a href="/git-2/">gitを使ってみる【撃沈編】</a>
+						</li>
+					<li>
+				<a href="/git/">gitを使ってみる【準備編】</a>
+						</li>
+					<li>
+				<a href="/1/">紙芝居をつくろう</a>
+						</li>
+					<li>
+				<a href="/hello/">はじめまして(*^^*)</a>
+						</li>
+				</ul>
+		</aside>		<aside id="categories-2" class="widget widget_categories"><h4 class="widget-title">カテゴリ</h4>		<ul>
+	<li class="cat-item cat-item-3"><a href="/category/git/" title="gitについて！">git</a> (4)
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/ruby/" title="rubyについて！">ruby</a> (7)
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/web/" title="WEBについて！">web</a> (2)
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/none/" >未分類</a> (3)
+</li>
+		</ul>
+</aside><aside id="search-2" class="widget widget_search"><h4 class="widget-title">検索</h4><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">検索:</span>
+					<input type="search" class="search-field" placeholder="検索 &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit screen-reader-text" value="検索" />
+			</form></aside><aside id="meta-2" class="widget widget_meta"><h4 class="widget-title">その他</h4>			<ul>
+						<li><a href="/wp-login.php">ログイン</a></li>
+			<li><a href="/feed/">投稿の <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">コメントの <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://ja.wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>			</div><!-- .widget-area -->
+		
+	</div><!-- .secondary -->
+
+	</div><!-- .sidebar -->
+
+</div><!-- .site -->
+
+
+<div id="footer" class="site-footer" role="contentinfo">
+		<div id="footer-image"></div>
+		<div id="footer-text">
+			<a href="https://circlearound.co.jp/"><img id="logo" src="/wp-content/themes/rubyjo/image/source/logo_big.png"></a>
+			<p>Copyright(c) 2015 Rubyjo CircleAround Inc. All Rights Reserved.</p>
+		</div>
+</div><!-- .site-footer -->
+
+
+
+<!-- BEGIN: WP Social Bookmarking Light -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<!-- END: WP Social Bookmarking Light -->
+<script type='text/javascript' src="/wp-content/themes/rubyjo/js/skip-link-focus-fix.js?ver=20141010"></script>
+<script type='text/javascript' src="/wp-includes/js/comment-reply.min.js?ver=4.8.1"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"<span class=\"screen-reader-text\">\u30b5\u30d6\u30e1\u30cb\u30e5\u30fc\u3092\u5c55\u958b<\/span>","collapse":"<span class=\"screen-reader-text\">\u30b5\u30d6\u30e1\u30cb\u30e5\u30fc\u3092\u9589\u3058\u308b<\/span>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src="/wp-content/themes/rubyjo/js/functions.js?ver=20150330"></script>
+<script type='text/javascript' src="/wp-includes/js/wp-embed.min.js?ver=4.8.1"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-32434659-2'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<script src="/wp-content/themes/rubyjo/js/jquery-2.1.4.min.js"></script>
+<script src="/wp-content/themes/rubyjo/js/jquery.easing.1.3.js"></script>
+<script src="/wp-content/themes/rubyjo/js/scroll.js"></script>
+
+</body>
+</html>
